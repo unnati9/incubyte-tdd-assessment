@@ -58,4 +58,12 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.stringCalculator('//;\n1;2')).toBe(3);
   });
+
+  it('#stringCalculator should throw exception for negative number input', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(() => app.stringCalculator('1,-2')).toThrowError('No negative values are allowed: -2');
+    expect(() => app.stringCalculator('1,-2,-3')).toThrowError('No negative values are allowed: -2, -3');
+  });
+  
 });
