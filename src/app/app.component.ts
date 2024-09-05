@@ -12,8 +12,9 @@ export class AppComponent {
   title = 'incubyte-tdd-assessment';
 
   stringCalculator = (str: string): number => {
+    const newLineDelimiter = /,|\n/;
     if (str) {
-      return str.split(',').reduce((sum, num) => {
+      return str.split(newLineDelimiter).reduce((sum, num) => {
         return sum += +num;
       }, 0);
     }

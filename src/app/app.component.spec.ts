@@ -39,4 +39,17 @@ describe('AppComponent', () => {
     expect(app.stringCalculator('1')).toBe(1);
     expect(app.stringCalculator('1,2')).toBe(3);
   });
+
+  it('#stringCalculator should handle any amount of numbers and return sum', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.stringCalculator('1,2,3,4,5,6')).toBe(21);
+    expect(app.stringCalculator('1,1,1,1,1,2,2,2,2,2')).toBe(15);
+  });
+
+  it('#stringCalculator should handle new lines between numbers', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.stringCalculator('1\n2,3')).toBe(6);
+  });
 });
