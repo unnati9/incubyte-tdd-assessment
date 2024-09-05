@@ -32,4 +32,11 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.stringCalculator('')).toBe(0);
   });
+
+  it('#stringCalculator should return sum of 1 or 2 comma-separated numbers', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.stringCalculator('1')).toBe(1);
+    expect(app.stringCalculator('1,2')).toBe(3);
+  });
 });

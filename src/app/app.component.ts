@@ -6,12 +6,17 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'incubyte-tdd-assessment';
 
   stringCalculator = (str: string): number => {
+    if (str) {
+      return str.split(',').reduce((sum, num) => {
+        return sum += +num;
+      }, 0);
+    }
     return 0;
-  }
+  };
 }
