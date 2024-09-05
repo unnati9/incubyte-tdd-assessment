@@ -24,8 +24,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, incubyte-tdd-assessment');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, incubyte-tdd-assessment'
+    );
   });
+
+  // Incubyte TDD Assessment: String Calculator TDD Kata
 
   it('#stringCalculator should return 0 for an empty string', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -62,8 +66,11 @@ describe('AppComponent', () => {
   it('#stringCalculator should throw exception for negative number input', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(() => app.stringCalculator('1,-2')).toThrowError('No negative values are allowed: -2');
-    expect(() => app.stringCalculator('1,-2,-3')).toThrowError('No negative values are allowed: -2, -3');
+    expect(() => app.stringCalculator('1,-2')).toThrowError(
+      'No negative values are allowed: -2'
+    );
+    expect(() => app.stringCalculator('1,-2,-3')).toThrowError(
+      'No negative values are allowed: -2, -3'
+    );
   });
-  
 });
