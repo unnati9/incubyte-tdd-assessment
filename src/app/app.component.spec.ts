@@ -26,4 +26,10 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, incubyte-tdd-assessment');
   });
+
+  it('#stringCalculator should return 0 for an empty string', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.stringCalculator('')).toBe(0);
+  });
 });

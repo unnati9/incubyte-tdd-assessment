@@ -10,4 +10,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'incubyte-tdd-assessment';
+
+  stringCalculator = (str: string): number => {
+    return 0;
+  }
 }
