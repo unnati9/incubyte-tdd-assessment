@@ -1,4 +1,4 @@
-# IncubyteTddAssessment : String Calculator TDD Kata
+# IncubyteTddAssessment : String Calculator TDD Kata - Unnati Patil
 
 ## Running unit tests
 
