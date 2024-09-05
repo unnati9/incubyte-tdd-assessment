@@ -52,4 +52,10 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.stringCalculator('1\n2,3')).toBe(6);
   });
+
+  it('#stringCalculator should support different delimiters', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.stringCalculator('//;\n1;2')).toBe(3);
+  });
 });

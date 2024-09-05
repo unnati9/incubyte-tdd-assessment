@@ -12,12 +12,22 @@ export class AppComponent {
   title = 'incubyte-tdd-assessment';
 
   stringCalculator = (str: string): number => {
-    const newLineDelimiter = /,|\n/;
+    let delimiter = /,|\n/;
+    let inputString = str;
+
+    
     if (str) {
-      return str.split(newLineDelimiter).reduce((sum, num) => {
+      if (str.startsWith('//')) {
+        delimiter = new RegExp(str.split('\n').shift()!.substring(2));
+        inputString = str.replace(/^\/\/.+\n/, '');
+      }
+      
+      return inputString.split(delimiter).reduce((sum, num) => {
         return sum += +num;
       }, 0);
     }
+
     return 0;
   };
+
 }
