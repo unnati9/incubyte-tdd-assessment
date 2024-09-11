@@ -10,6 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'incubyte-tdd-assessment';
+  result = 0;
 
   stringCalculator = (str: string): number => {
     let delimiter = /,|\n/;
@@ -19,8 +20,11 @@ export class AppComponent {
 
     if (str) {
       if (str.startsWith('//')) {
+
         delimiter = new RegExp(str.split('\n').shift()!.substring(2));
+        console.log(delimiter);
         inputString = str.replace(/^\/\/.+\n/, '');
+        console.log(inputString);
       }
 
       sum = inputString.split(delimiter).reduce((total, num) => {
@@ -37,6 +41,8 @@ export class AppComponent {
       );
     }
 
-    return sum | 0;
+    this.result = sum;
+
+    return sum;
   };
 }
