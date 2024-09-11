@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class StringCalculatorComponent {
   result = 0;
+  error = '';
   stringCalculator = (str: string): number => {
+    this.error = '';
     let delimiter = /,|\n/;
     let inputString = str;
     let negativeValues: number[] = [];
@@ -33,8 +35,10 @@ export class StringCalculatorComponent {
     }
 
     if (negativeValues.length) {
+      const errorMsg = 'No negative values are allowed: ' + negativeValues.join(', ');
+      this.error = errorMsg;
       throw new Error(
-        'No negative values are allowed: ' + negativeValues.join(', ')
+        errorMsg
       );
     }
 

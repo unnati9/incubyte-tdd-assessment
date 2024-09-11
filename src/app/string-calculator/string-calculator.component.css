@@ -1,0 +1,8 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+}

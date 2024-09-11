@@ -2,4 +2,9 @@
     <textarea type="text" rows="5" #inputString></textarea>
     <button (click)="stringCalculator(inputString.value)">Calculate</button>
 </div>
-<p>Sum of numbers in string: {{result}}</p>
+
+@if (error) {
+    <p>{{error}}</p>
+} @else {
+    <p>Sum of numbers in string: {{result}}</p>
+}
