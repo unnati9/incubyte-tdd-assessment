@@ -1,10 +1,12 @@
-<div class="calculator">
-    <textarea type="text" rows="5" #inputString></textarea>
-    <button (click)="stringCalculator(inputString.value)">Calculate</button>
+<div class="container">
+    <div class="calculator">
+        <textarea type="text" rows="5" #inputString></textarea>
+        <button (click)="stringCalculator(inputString.value)">Calculate</button>
+    </div>
+    
+    @if (error) {
+        <p>{{error}}</p>
+    } @else {
+        <p>Sum of numbers in string: {{result}}</p>
+    }
 </div>
-
-@if (error) {
-    <p>{{error}}</p>
-} @else {
-    <p>Sum of numbers in string: {{result}}</p>
-}

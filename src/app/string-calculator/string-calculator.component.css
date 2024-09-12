@@ -1,3 +1,16 @@
+.container {
+    background-color: cadetblue;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    width: 30%;
+    margin: auto;
+    box-shadow: 0.5rem 0.5rem;
+    color: white;
+    font-size: larger;
+    /* font-family: "Handjet"; */
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
@@ -6,3 +19,22 @@
     gap: 1rem;
     margin: auto;
 }
+
+.calculator button, .calculator textarea {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.calculator button {
+    font-family: inherit;
+    /* font-family: "Handjet"; */
+    cursor: pointer;
+    font-size: medium;
+}
+
+.calculator button:hover {
+    background-color: lightblue;
+}
+
+
+
